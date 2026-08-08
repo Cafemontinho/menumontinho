@@ -197,14 +197,6 @@
     color:var(--gold-soft);
     margin:0 0 .3rem;
   }
-  .menu-header .loc{
-    font-size:.72rem;
-    letter-spacing:.25em;
-    text-transform:uppercase;
-    color:rgba(239,232,216,0.5);
-  }
-  .menu-header .rule{margin-top:1.6rem;}
-
   .menu-columns{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -225,20 +217,15 @@
     padding-bottom:.8rem;
     margin-bottom:1.6rem;
   }
-  .item{
-    margin-bottom:1.35rem;
-  }
-  .item-row{
-    display:flex;
-    align-items:baseline;
-    gap:.5rem;
-  }
+  .item{margin-bottom:1.35rem;}
+  .item-row{display:flex;align-items:baseline;gap:.5rem;}
   .item-name{
     font-family:'Cormorant Garamond',serif;
     font-weight:600;
     font-size:1.15rem;
     color:var(--cream);
-    white-space:nowrap;
+    white-space:normal;
+    word-break:break-word;
   }
   .item-name .en{
     font-style:italic;
@@ -246,6 +233,7 @@
     font-size:.95rem;
     color:rgba(239,232,216,0.55);
     margin-left:.4rem;
+    display:inline-block;
   }
   .dots{
     flex:1;
@@ -260,6 +248,7 @@
     font-size:1rem;
     color:var(--gold-soft);
     white-space:nowrap;
+    flex-shrink:0;
   }
   .item-desc{
     font-size:.8rem;
@@ -269,8 +258,6 @@
     font-family:'Jost',sans-serif;
     font-weight:300;
   }
-
-  .section-gap{margin-top:2.6rem;}
 
   /* ---------- WINE MENU ---------- */
   #wine{
@@ -327,6 +314,8 @@
     font-size:1.15rem;
     color:var(--lilac);
     letter-spacing:.01em;
+    white-space:normal;
+    word-break:break-word;
   }
   .wine-dots{
     flex:1;
@@ -340,25 +329,24 @@
     font-weight:500;
     font-size:1.05rem;
     color:#fff;
+    white-space:nowrap;
+    flex-shrink:0;
   }
-  .wine-footer{
-    text-align:center;
-    margin-top:3.5rem;
-    padding-top:2rem;
-    border-top:1px solid rgba(255,255,255,0.15);
-    font-size:.8rem;
-    color:rgba(231,220,255,0.7);
-    letter-spacing:.03em;
-  }
-  .wine-footer a{color:var(--lilac);text-decoration:none;}
 
-  .footer-strip{
-    text-align:center;
-    margin-top:3.5rem;
-    font-size:.7rem;
-    letter-spacing:.25em;
-    text-transform:uppercase;
-    color:rgba(239,232,216,0.35);
+  /* ---------- CLASSES DE AJUSTE ---------- */
+  .no-break { white-space: nowrap; }
+  .br-mobile { display: none; }
+  @media (max-width: 600px) {
+    .br-mobile { display: block; }
+  }
+
+  /* ---------- AJUSTES ESPECÍFICOS ---------- */
+  @media (max-width: 600px) {
+    #landing { padding: 6vh 5vw 4vh; }
+    .choice-card { padding: 1.8rem 1.2rem; }
+    .landing-footer { margin-top: 2.5rem; }
+    #food, #wine { padding: 5rem 4vw 3rem; }
+    .back-btn { top: 1rem; left: 1rem; padding: .45rem .85rem; font-size: .7rem; }
   }
 </style>
 </head>
@@ -396,49 +384,34 @@
   </div>
 
   <div class="menu-columns">
-    <!-- PETISCOS -->
     <div>
       <div class="col-title">Petiscos · Snacks</div>
-
       <div class="item"><div class="item-row"><span class="item-name">Pastéis de Bacalhau<span class="en">Codfish Cakes</span></span><span class="dots"></span><span class="price">1,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Asas de Frango<span class="en">Chicken Wings</span></span><span class="dots"></span><span class="price">3,00 € · 5,00 €</span></div><div class="item-desc">½ dose / dose — half portion / full portion</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Moelas<span class="en">Chicken Gizzards</span></span><span class="dots"></span><span class="price">3,50 € · 6,00 €</span></div><div class="item-desc">½ dose / dose — half portion / full portion</div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Asas de Frango<span class="en">Chicken Wings</span></span><span class="dots"></span><span class="price">3,00 € · 5,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Moelas<span class="en">Chicken Gizzards</span></span><span class="dots"></span><span class="price">3,50 € · 6,00 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Rissóis de Carne<span class="en">Meat Rissoles</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Rissóis de Camarão<span class="en">Shrimp Rissoles</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Rissóis de Atum<span class="en">Tuna Rissoles</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Rissóis de Leitão<span class="en">Suckling Pig Rissoles</span></span><span class="dots"></span><span class="price">1,50 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Cachorrinhos<span class="en">Mini Hot Dogs</span></span><span class="dots"></span><span class="price">1,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Ovo à Montinho<span class="en">Montinho-style Egg</span></span><span class="dots"></span><span class="price">1,50 €</span></div><div class="item-desc">Ovo, atum, cebola, salsa, pickles, maionese — egg, tuna, onion, parsley, pickles, mayonnaise</div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Ovo à Montinho<span class="en">Montinho-style Egg</span></span><span class="dots"></span><span class="price">1,50 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Salada Mista<span class="en">Mixed Salad</span></span><span class="dots"></span><span class="price">3,00 €</span></div></div>
       <div class="item"><div class="item-row"><span class="item-name">Dose de Batatas Fritas<span class="en">Side of Fries</span></span><span class="dots"></span><span class="price">2,50 €</span></div></div>
     </div>
-
-    <!-- SNACKS/MAINS -->
     <div>
       <div class="col-title">Pratos Principais · Mains</div>
-
-      <div class="item"><div class="item-row"><span class="item-name">Francesinha</span><span class="dots"></span><span class="price">11,80 €</span></div><div class="item-desc">Pão torrado, fiambre, cachaço fumado, carne, bacon, chouriço criolo, ovo, molho, batata frita — toasted bread, ham, smoked pork neck, meat, bacon, creole chorizo, egg, sauce, fries</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Hambúrguer Simples<span class="en">Simple Burger</span></span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item-desc">Pão, alface, molho, carne, fiambre, queijo — bread, lettuce, sauce, beef, ham, cheese</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Hambúrguer Montinho<span class="en">Montinho Burger</span></span><span class="dots"></span><span class="price">10,00 €</span></div><div class="item-desc">Pão torrado, molho, alface, tomate, cebola, carne, queijo, ovo, batata frita, ananás grelhado — toasted bread, sauce, lettuce, tomato, onion, beef, cheese, egg, fries, grilled pineapple</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Cachorro Simples<span class="en">Simple Hot Dog</span></span><span class="dots"></span><span class="price">4,00 €</span></div><div class="item-desc">Pão torrado, fiambre, salsicha, queijo — toasted bread, ham, sausage, cheese</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Cachorro Especial<span class="en">Special Hot Dog</span></span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item-desc">Pão torrado, fiambre, salsicha grelhada, bacon, queijo, ovo, molho, batata frita — toasted bread, ham, grilled sausage, bacon, cheese, egg, sauce, fries</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Prego no Pão<span class="en">Steak Sandwich</span></span><span class="dots"></span><span class="price">5,00 €</span></div><div class="item-desc">Pão, fiambre, carne, queijo — bread, ham, steak, cheese</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Prego no Prato Montinho<span class="en">Montinho Steak Plate</span></span><span class="dots"></span><span class="price">10,00 €</span></div><div class="item-desc">Bife, fiambre, queijo, ovo, batata frita, salada — steak, ham, cheese, egg, fries, salad</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Ovos Rotos Montinho<span class="en">Montinho Broken Eggs</span></span><span class="dots"></span><span class="price">8,00 €</span></div><div class="item-desc">Batata frita, ovos estrelados, queijo, presunto, molho de francesinha — fries, fried eggs, cheese, cured ham, francesinha sauce</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Batatas à Montinho<span class="en">Montinho-style Potatoes</span></span><span class="dots"></span><span class="price">4,00 €</span></div><div class="item-desc">Batata frita, chouriço, cebola frita, queijo cheddar — fries, chorizo, fried onion, cheddar</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Omelete Mista<span class="en">Mixed Omelette</span></span><span class="dots"></span><span class="price">5,00 €</span></div><div class="item-desc">Queijo, fiambre, batata frita, salada — cheese, ham, fries, salad</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Omelete de Queijo<span class="en">Cheese Omelette</span></span><span class="dots"></span><span class="price">5,00 €</span></div><div class="item-desc">Queijo, batata frita, salada — cheese, fries, salad</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Omelete de Fiambre<span class="en">Ham Omelette</span></span><span class="dots"></span><span class="price">5,00 €</span></div><div class="item-desc">Fiambre, batata frita, salada — ham, fries, salad</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Omelete de Atum<span class="en">Tuna Omelette</span></span><span class="dots"></span><span class="price">6,00 €</span></div><div class="item-desc">Atum, cebola, batata frita, salada — tuna, onion, fries, salad</div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Sandes de Ovos Entalados<span class="en">Egg Sandwich</span></span><span class="dots"></span><span class="price">3,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Sandes de Presunto<span class="en">Cured Ham Sandwich</span></span><span class="dots"></span><span class="price">2,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Sandes de Panado<span class="en">Breaded Pork Sandwich</span></span><span class="dots"></span><span class="price">3,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Fêvera no Pão<span class="en">Pork Loin Sandwich</span></span><span class="dots"></span><span class="price">2,50 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Ovos Entalados<span class="en">Sliced Hard-Boiled Eggs</span></span><span class="dots"></span><span class="price">3,00 €</span></div><div class="item-desc">Ovo e presunto — egg and cured ham</div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Francesinha</span><span class="dots"></span><span class="price">11,80 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Hambúrguer Simples<span class="en">Simple Burger</span></span><span class="dots"></span><span class="price">6,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Hambúrguer Montinho<span class="en">Montinho Burger</span></span><span class="dots"></span><span class="price">10,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Cachorro Simples<span class="en">Simple Hot Dog</span></span><span class="dots"></span><span class="price">4,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Cachorro Especial<span class="en">Special Hot Dog</span></span><span class="dots"></span><span class="price">8,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Prego no Pão<span class="en">Steak Sandwich</span></span><span class="dots"></span><span class="price">5,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Prego no Prato Montinho<span class="en">Montinho Steak Plate</span></span><span class="dots"></span><span class="price">10,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Ovos Rotos Montinho<span class="en">Montinho Broken Eggs</span></span><span class="dots"></span><span class="price">8,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Batatas à Montinho<span class="en">Montinho-style Potatoes</span></span><span class="dots"></span><span class="price">4,00 €</span></div></div>
+      <div class="item"><div class="item-row"><span class="item-name">Omeletes</span><span class="dots"></span><span class="price">5,00€ - 6,00€</span></div></div>
     </div>
   </div>
-
-  <div class="footer-strip">Café Montinho · Mazarefes · Viana do Castelo</div>
 </div>
 
 <!-- WINE MENU -->
@@ -469,12 +442,7 @@
       <div class="wine-item"><span class="wine-name">Conde Vilar Branco</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
       <div class="wine-item"><span class="wine-name">Solar de Serrade Branco</span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
       <div class="wine-item"><span class="wine-name">Encostas do Bairro</span><span class="wine-dots"></span><span class="wine-price">4.5 €</span></div>
-
     </div>
-  </div>
-
-  <div class="wine-footer">
-    Largo do Montinho, N.º 1 · <a href="mailto:cafemontinho@gmail.com">cafemontinho@gmail.com</a> · Tlm 965 221 593
   </div>
 </div>
 
