@@ -333,6 +333,43 @@
     flex-shrink:0;
   }
 
+  /* ---------- DISPONIBILIDADE (indisponível/esgotado) ---------- */
+  .badge-esgotado{
+    display:none;
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:.62rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#e05a5a;
+    border:1px solid rgba(224,90,90,0.5);
+    border-radius:3px;
+    padding:.15rem .4rem;
+    margin-left:.5rem;
+    vertical-align:middle;
+    white-space:nowrap;
+  }
+  .item.unavailable .badge-esgotado,
+  .wine-item.unavailable .badge-esgotado{
+    display:inline-block;
+  }
+  .item.unavailable .item-name,
+  .item.unavailable .price{
+    opacity:.4;
+    text-decoration:line-through;
+  }
+  .item.unavailable .item-name .en{
+    text-decoration:line-through;
+  }
+  .wine-item.unavailable .wine-name,
+  .wine-item.unavailable .wine-price{
+    opacity:.4;
+    text-decoration:line-through;
+  }
+  .wine-item.unavailable .wine-dots{
+    opacity:.4;
+  }
+
   /* ---------- CLASSES DE AJUSTE ---------- */
   .no-break { white-space: nowrap; }
   .br-mobile { display: none; }
@@ -386,30 +423,30 @@
   <div class="menu-columns">
     <div>
       <div class="col-title">Petiscos · Snacks</div>
-      <div class="item"><div class="item-row"><span class="item-name">Pastéis de Bacalhau<span class="en">Codfish Cakes</span></span><span class="dots"></span><span class="price">1,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Asas de Frango<span class="en">Chicken Wings</span></span><span class="dots"></span><span class="price">3,00 € · 5,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Moelas<span class="en">Chicken Gizzards</span></span><span class="dots"></span><span class="price">3,50 € · 6,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Rissóis de Carne<span class="en">Meat Rissoles</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Rissóis de Camarão<span class="en">Shrimp Rissoles</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Rissóis de Atum<span class="en">Tuna Rissoles</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Rissóis de Leitão<span class="en">Suckling Pig Rissoles</span></span><span class="dots"></span><span class="price">1,50 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Cachorrinhos<span class="en">Mini Hot Dogs</span></span><span class="dots"></span><span class="price">1,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Ovo à Montinho<span class="en">Montinho-style Egg</span></span><span class="dots"></span><span class="price">1,50 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Salada Mista<span class="en">Mixed Salad</span></span><span class="dots"></span><span class="price">3,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Dose de Batatas Fritas<span class="en">Side of Fries</span></span><span class="dots"></span><span class="price">2,50 €</span></div></div>
+      <div class="item" data-id="f-pasteis-de-bacalhau"><div class="item-row"><span class="item-name">Pastéis de Bacalhau<span class="en">Codfish Cakes</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">1,00 €</span></div></div>
+      <div class="item" data-id="f-asas-de-frango"><div class="item-row"><span class="item-name">Asas de Frango<span class="en">Chicken Wings</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">3,00 € · 5,00 €</span></div></div>
+      <div class="item" data-id="f-moelas"><div class="item-row"><span class="item-name">Moelas<span class="en">Chicken Gizzards</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">3,50 € · 6,00 €</span></div></div>
+      <div class="item" data-id="f-rissois-de-carne"><div class="item-row"><span class="item-name">Rissóis de Carne<span class="en">Meat Rissoles</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
+      <div class="item" data-id="f-rissois-de-camarao"><div class="item-row"><span class="item-name">Rissóis de Camarão<span class="en">Shrimp Rissoles</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
+      <div class="item" data-id="f-rissois-de-atum"><div class="item-row"><span class="item-name">Rissóis de Atum<span class="en">Tuna Rissoles</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">0,75 €</span></div></div>
+      <div class="item" data-id="f-rissois-de-leitao"><div class="item-row"><span class="item-name">Rissóis de Leitão<span class="en">Suckling Pig Rissoles</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">1,50 €</span></div></div>
+      <div class="item" data-id="f-cachorrinhos"><div class="item-row"><span class="item-name">Cachorrinhos<span class="en">Mini Hot Dogs</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">1,00 €</span></div></div>
+      <div class="item" data-id="f-ovo-a-montinho"><div class="item-row"><span class="item-name">Ovo à Montinho<span class="en">Montinho-style Egg</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">1,50 €</span></div></div>
+      <div class="item" data-id="f-salada-mista"><div class="item-row"><span class="item-name">Salada Mista<span class="en">Mixed Salad</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">3,00 €</span></div></div>
+      <div class="item" data-id="f-dose-de-batatas-fritas"><div class="item-row"><span class="item-name">Dose de Batatas Fritas<span class="en">Side of Fries</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">2,50 €</span></div></div>
     </div>
     <div>
       <div class="col-title">Pratos Principais · Mains</div>
-      <div class="item"><div class="item-row"><span class="item-name">Francesinha</span><span class="dots"></span><span class="price">11,80 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Hambúrguer Simples<span class="en">Simple Burger</span></span><span class="dots"></span><span class="price">6,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Hambúrguer Montinho<span class="en">Montinho Burger</span></span><span class="dots"></span><span class="price">10,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Cachorro Simples<span class="en">Simple Hot Dog</span></span><span class="dots"></span><span class="price">4,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Cachorro Especial<span class="en">Special Hot Dog</span></span><span class="dots"></span><span class="price">8,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Prego no Pão<span class="en">Steak Sandwich</span></span><span class="dots"></span><span class="price">5,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Prego no Prato Montinho<span class="en">Montinho Steak Plate</span></span><span class="dots"></span><span class="price">10,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Ovos Rotos Montinho<span class="en">Montinho Broken Eggs</span></span><span class="dots"></span><span class="price">8,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Batatas à Montinho<span class="en">Montinho-style Potatoes</span></span><span class="dots"></span><span class="price">4,00 €</span></div></div>
-      <div class="item"><div class="item-row"><span class="item-name">Omeletes</span><span class="dots"></span><span class="price">5,00€ - 6,00€</span></div></div>
+      <div class="item" data-id="f-francesinha"><div class="item-row"><span class="item-name">Francesinha<span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">11,80 €</span></div></div>
+      <div class="item" data-id="f-hamburguer-simples"><div class="item-row"><span class="item-name">Hambúrguer Simples<span class="en">Simple Burger</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">6,00 €</span></div></div>
+      <div class="item" data-id="f-hamburguer-montinho"><div class="item-row"><span class="item-name">Hambúrguer Montinho<span class="en">Montinho Burger</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">10,00 €</span></div></div>
+      <div class="item" data-id="f-cachorro-simples"><div class="item-row"><span class="item-name">Cachorro Simples<span class="en">Simple Hot Dog</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">4,00 €</span></div></div>
+      <div class="item" data-id="f-cachorro-especial"><div class="item-row"><span class="item-name">Cachorro Especial<span class="en">Special Hot Dog</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">8,00 €</span></div></div>
+      <div class="item" data-id="f-prego-no-pao"><div class="item-row"><span class="item-name">Prego no Pão<span class="en">Steak Sandwich</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">5,00 €</span></div></div>
+      <div class="item" data-id="f-prego-no-prato-montinho"><div class="item-row"><span class="item-name">Prego no Prato Montinho<span class="en">Montinho Steak Plate</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">10,00 €</span></div></div>
+      <div class="item" data-id="f-ovos-rotos-montinho"><div class="item-row"><span class="item-name">Ovos Rotos Montinho<span class="en">Montinho Broken Eggs</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">8,00 €</span></div></div>
+      <div class="item" data-id="f-batatas-a-montinho"><div class="item-row"><span class="item-name">Batatas à Montinho<span class="en">Montinho-style Potatoes</span><span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">4,00 €</span></div></div>
+      <div class="item" data-id="f-omeletes"><div class="item-row"><span class="item-name">Omeletes<span class="badge-esgotado">Esgotado</span></span><span class="dots"></span><span class="price">5,00€ - 6,00€</span></div></div>
     </div>
   </div>
 </div>
@@ -425,23 +462,23 @@
 
   <div class="wine-columns">
     <div>
-      <div class="wine-item"><span class="wine-name">Monte da Vaqueira</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
-      <div class="wine-item"><span class="wine-name">Encostas do Cartaxo Tinto</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
-      <div class="wine-item"><span class="wine-name">Cadão Reserva</span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
-      <div class="wine-item"><span class="wine-name">Piano Branco</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
-      <div class="wine-item"><span class="wine-name">Monte de Pinheiros Tinto</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
-      <div class="wine-item"><span class="wine-name">3 Amigos Branco</span><span class="wine-dots"></span><span class="wine-price">5 €</span></div>
-      <div class="wine-item"><span class="wine-name">Esteva Tinto</span><span class="wine-dots"></span><span class="wine-price">11 €</span></div>
+      <div class="wine-item" data-id="v-monte-da-vaqueira"><span class="wine-name">Monte da Vaqueira<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
+      <div class="wine-item" data-id="v-encostas-do-cartaxo-tinto"><span class="wine-name">Encostas do Cartaxo Tinto<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
+      <div class="wine-item" data-id="v-cadao-reserva"><span class="wine-name">Cadão Reserva<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
+      <div class="wine-item" data-id="v-piano-branco"><span class="wine-name">Piano Branco<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
+      <div class="wine-item" data-id="v-monte-de-pinheiros-tinto"><span class="wine-name">Monte de Pinheiros Tinto<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
+      <div class="wine-item" data-id="v-3-amigos-branco"><span class="wine-name">3 Amigos Branco<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">5 €</span></div>
+      <div class="wine-item" data-id="v-esteva-tinto"><span class="wine-name">Esteva Tinto<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">11 €</span></div>
     </div>
     <div>
-      <div class="wine-item"><span class="wine-name">Ponte da Barca Grande Escolha</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
-      <div class="wine-item"><span class="wine-name">Ponte da Barca</span><span class="wine-dots"></span><span class="wine-price">4.5 €</span></div>
-      <div class="wine-item"><span class="wine-name">Ponte da Barca Vinhão</span><span class="wine-dots"></span><span class="wine-price">10 €</span></div>
-      <div class="wine-item"><span class="wine-name">Muralhas Branco</span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
-      <div class="wine-item"><span class="wine-name">Provan Branco</span><span class="wine-dots"></span><span class="wine-price">7 €</span></div>
-      <div class="wine-item"><span class="wine-name">Conde Vilar Branco</span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
-      <div class="wine-item"><span class="wine-name">Solar de Serrade Branco</span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
-      <div class="wine-item"><span class="wine-name">Encostas do Bairro</span><span class="wine-dots"></span><span class="wine-price">4.5 €</span></div>
+      <div class="wine-item" data-id="v-ponte-da-barca-grande-escolha"><span class="wine-name">Ponte da Barca Grande Escolha<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
+      <div class="wine-item" data-id="v-ponte-da-barca"><span class="wine-name">Ponte da Barca<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">4.5 €</span></div>
+      <div class="wine-item" data-id="v-ponte-da-barca-vinhao"><span class="wine-name">Ponte da Barca Vinhão<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">10 €</span></div>
+      <div class="wine-item" data-id="v-muralhas-branco"><span class="wine-name">Muralhas Branco<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
+      <div class="wine-item" data-id="v-provan-branco"><span class="wine-name">Provan Branco<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">7 €</span></div>
+      <div class="wine-item" data-id="v-conde-vilar-branco"><span class="wine-name">Conde Vilar Branco<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">6 €</span></div>
+      <div class="wine-item" data-id="v-solar-de-serrade-branco"><span class="wine-name">Solar de Serrade Branco<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">9 €</span></div>
+      <div class="wine-item" data-id="v-encostas-do-bairro"><span class="wine-name">Encostas do Bairro<span class="badge-esgotado">Esgotado</span></span><span class="wine-dots"></span><span class="wine-price">4.5 €</span></div>
     </div>
   </div>
 </div>
@@ -452,6 +489,30 @@
     document.getElementById(id).classList.add('active');
     window.scrollTo({top:0, behavior:'instant'});
   }
+
+  // ---------- DISPONIBILIDADE DOS ITENS ----------
+  // Lê o ficheiro menu-status.json (no mesmo repositório) e marca
+  // como indisponíveis os itens cujo data-id lá apareça com valor "false".
+  // Este ficheiro é o que a webapp de gestão vai atualizar via GitHub REST API.
+  async function loadAvailability(){
+    try{
+      // cache-busting para evitar servir uma versão antiga em cache do GitHub Pages
+      const res = await fetch('menu-status.json?t=' + Date.now(), { cache: 'no-store' });
+      if(!res.ok) return; // se o ficheiro ainda não existir, assume tudo disponível
+      const status = await res.json();
+      Object.keys(status).forEach(id => {
+        if(status[id] === false){
+          const el = document.querySelector('[data-id="' + CSS.escape(id) + '"]');
+          if(el) el.classList.add('unavailable');
+        }
+      });
+    }catch(err){
+      // falha silenciosa: menu continua a funcionar com tudo "disponível"
+      console.warn('Não foi possível carregar menu-status.json', err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadAvailability);
 </script>
 
 </body>
