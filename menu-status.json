@@ -1,7 +1,7 @@
 {
-  "f-pasteis-de-bacalhau": true,
-  "f-asas-de-frango": true,
-  "f-moelas": true,
+  "f-pasteis-de-bacalhau": false,
+  "f-asas-de-frango": false,
+  "f-moelas": false,
   "f-rissois-de-carne": true,
   "f-rissois-de-camarao": true,
   "f-rissois-de-atum": true,
